@@ -16,9 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from core.views import home, contact
+from courses.views import courses, details
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
-    path('contato/', contact, name='contact')
+    path('contato/', contact, name='contact'),
+    path('cursos/', courses, name='courses'),
+    path('cursos/<str:slug>/', details, name='details')
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
