@@ -129,7 +129,7 @@ MEDIA_URL = '/media/'
 # E-mails
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-DEFAULT_FROM_EMAIL = 'Nome <email@gmail.com>'
+DEFAULT_FROM_EMAIL = 'Simplemooc <s.oliveira.15@hotmail.com>'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.live.com'
 EMAIL_HOST_USER = 's.oliveira.15@hotmail.com'

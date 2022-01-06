@@ -18,7 +18,7 @@ from django.contrib.auth import views as auth_views
 from django.urls import path
 from core.views import home, contact
 from courses.views import courses, details
-from accounts.views import register, dashboard, edit, edit_password
+from accounts.views import register, dashboard, edit, edit_password, password_reset, password_reset_confirm
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -31,6 +31,8 @@ urlpatterns = [
     path('entrar/', auth_views.LoginView.as_view(template_name='accounts/login.html'), name='login'),
     path('sair/', auth_views.LogoutView.as_view(next_page='/'), name='logout'),
     path('cadastre-se/', register, name='register'),
+    path('nova-senha/', password_reset, name='password_reset'),
+    path('confirmar-nova-senha/<str:key>/', password_reset_confirm, name='password_reset_confirm'),
     path('conta/', dashboard, name='dashboard'),
     path('conta/editar/', edit, name='edit'),
     path('conta/editar_senha/', edit_password, name='edit_password'),
